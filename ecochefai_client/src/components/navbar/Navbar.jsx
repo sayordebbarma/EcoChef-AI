@@ -1,20 +1,29 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <header className="bg-green-600 text-white shadow-md">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
-        <div className="text-2xl font-bold">
+        <Link to="/" className="text-2xl font-bold">
           EcoChef<span className="text-yellow-300">AI</span>
-        </div>
+        </Link>
 
         {/* Navigation Links */}
         <nav className="hidden md:flex space-x-6">
-          <a href="#" className="hover:text-yellow-300 transition">About Us</a>
-          <a href="#" className="hover:text-yellow-300 transition">How It Works</a>
-          <a href="#" className="hover:text-yellow-300 transition">Recipes</a>
-          <a href="#" className="hover:text-yellow-300 transition">Contact</a>
+          <Link to="/about" className="hover:text-yellow-300 transition">
+            About Us
+          </Link>
+          <Link to="/how-it-works" className="hover:text-yellow-300 transition">
+            How It Works
+          </Link>
+          <Link to="/recipes" className="hover:text-yellow-300 transition">
+            Recipes
+          </Link>
+          <Link to="/contact" className="hover:text-yellow-300 transition">
+            Contact
+          </Link>
         </nav>
 
         {/* Login/Sign Up Button */}
@@ -40,7 +49,7 @@ const Navbar = () => {
         </div>
       </div>
     </header>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
