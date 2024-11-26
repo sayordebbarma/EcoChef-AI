@@ -14,20 +14,6 @@ const DialogBox = ({ isOpen, onClose }) => {
           className='absolute top-5 right-5 text-gray-400 hover:text-gray-600'
         >
           <FontAwesomeIcon icon={faXmark} className='w-6 h-6'/>
-          {/* <svg
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            strokeWidth={2}
-            stroke='currentColor'
-            className='w-8 h-8'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M6 18L18 6M6 6l12 12'
-            />
-          </svg> */}
         </button>
 
         {/* Dialog Content */}
