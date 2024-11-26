@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import teamMembers from '../../components/teamData/teamMembers';
+import teamMembers from '../../components/data/teamMembers';
 
 const MeetTheTeam = () => {
   const sectionRef = useRef(null);
