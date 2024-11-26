@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
-import DialogBox from '../../components/dialogBox/DialogBox';
+import { Link, useNavigate } from 'react-router-dom';
 import GG from '../../assets/gg.png';
-import DD from '../../assets/dd.png';
 import SS from '../../assets/ss.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCameraRetro, faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const HeroSection = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const handleModalToggle = () => {
-    setModalOpen(!isModalOpen);
+const HeroSection = ({ aboutUsRef }) => {
+  const handleLearnMore = () => {
+    if (aboutUsRef && aboutUsRef.current) {
+      aboutUsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   // GSAP Animations
@@ -35,7 +32,7 @@ const HeroSection = () => {
 
     // Animate buttons
     tl.fromTo(
-      '.search-options',
+      '.hero-buttons',
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, stagger: 0.3 }
     );
@@ -67,31 +64,19 @@ const HeroSection = () => {
           effortless.
         </p>
 
-        {/* Search Options */}
-        <div className='search-options flex flex-col md:flex-row items-center justify-center gap-6 w-full max-w-3xl'>
-          {/* Text Field: Search by Name */}
-          <div className='flex items-center bg-white border border-green-600 rounded-lg px-4 py-3 shadow-md w-full md:w-auto'>
-            <FontAwesomeIcon
-              icon={faSearch}
-              className='w-6 h-6 text-gray-400'
-            />
-            <input
-              type='text'
-              placeholder='Search by Plant Name'
-              className='flex-grow outline-none px-2'
-            />
-            <button className='bg-green-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-green-700 transition ml-3'>
-              Search
-            </button>
-          </div>
-
-          {/* Button: Upload or Take a Picture */}
-          <button
-            onClick={handleModalToggle}
-            className='flex items-center justify-center bg-yellow-300 text-green-800 rounded-lg px-6 py-4 shadow-md hover:bg-yellow-400 transition w-full md:w-auto'
+        {/* Hero Buttons */}
+        <div className='hero-buttons flex flex-col md:flex-row items-center justify-center gap-6 w-full max-w-3xl'>
+          <Link
+            to='/recipes'
+            className='bg-green-600 text-white text-lg font-semibold px-6 py-4 rounded-md shadow-md hover:bg-green-700 transition w-full md:w-auto'
           >
-            <FontAwesomeIcon icon={faCameraRetro} className='w-6 h-6 mr-2' />
-            Upload/Take a Picture
+            Get Started
+          </Link>
+          <button
+            onClick={handleLearnMore}
+            className='bg-yellow-300 text-green-800 text-lg font-semibold px-6 py-4 rounded-md shadow-md hover:bg-yellow-400 transition'
+          >
+            Learn More
           </button>
         </div>
 
@@ -112,26 +97,13 @@ const HeroSection = () => {
             alt='Flower Decoration'
             className='floating-svg absolute top-20 right-40 w-20 opacity-70'
           />
-          {/* <img
-            src={DD}
-            alt="Berry Decoration"
-            className="floating-svg absolute bottom-16 left-16 w-10 opacity-80"
-          /> */}
           <img
             src={GG}
             alt='Fruit Decoration 2'
             className='floating-svg absolute bottom-1/3 right-5 w-80 opacity-70'
           />
-          {/* <img
-            src={DD}
-            alt='Fruit Decoration'
-            className='floating-svg absolute bottom-0 right-10 w-80 opacity-75'
-          /> */}
         </div>
       </section>
-
-      {/* Modal */}
-      <DialogBox isOpen={isModalOpen} onClose={handleModalToggle} />
     </main>
   );
 };
