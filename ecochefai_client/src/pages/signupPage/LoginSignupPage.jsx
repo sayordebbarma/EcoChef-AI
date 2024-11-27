@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
-import LogInSignUp from './LogInSignUp';
+import LogInSignUp from './LoginSignup';
 
 const LoginSignupPage = () => {
   return (
@@ -12,9 +12,7 @@ const LoginSignupPage = () => {
       </main>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default LoginSignupPage
-
-
+export default LoginSignupPage;

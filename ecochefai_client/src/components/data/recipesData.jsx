@@ -1,4 +1,7 @@
-// data/recipes.js
+import Salad from "../../assets/recipes/Salad.jpg"
+import QuinoaBurritoBowls from "../../assets/recipes/QuinoaBurritoBowls.jpg"
+import Spaghetti from "../../assets/recipes/spaghetti.webp"
+
 const recipesData = [
     {
       id: 1,
@@ -15,7 +18,7 @@ const recipesData = [
       ],
       instructions:
         'Grill the vegetables and toss them with olive oil, lemon juice, garlic, and parsley.',
-      image: 'https://via.placeholder.com/300x200?text=Grilled+Vegetable+Salad', // Add image URL
+      image: Salad
     },
     {
       id: 2,
@@ -32,7 +35,7 @@ const recipesData = [
       ],
       instructions:
         'Cook quinoa and beans, then assemble with corn, avocado, and lime.',
-      image: 'https://via.placeholder.com/300x200?text=Quinoa+Black+Bean+Bowl', // Add image URL
+      image: QuinoaBurritoBowls
     },
     {
       id: 3,
@@ -48,7 +51,7 @@ const recipesData = [
       ],
       instructions:
         'Cook spaghetti and toss with garlic, olive oil, and red pepper flakes.',
-      image: 'https://via.placeholder.com/300x200?text=Spaghetti+Aglio+e+Olio', // Add image URL
+      image: Spaghetti
     },
   ];
   

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
-import Img from "../../assets/background/loginBg.jpg"; // Your imported background image
+import Img from "../../assets/background/loginBg.jpg";
 
-const LoginSignup = () => {
+const LogInSignUp = () => {
   const [action, setAction] = useState("Sign Up");
 
   return (
@@ -85,4 +85,4 @@ const LoginSignup = () => {
   );
 };
 
-export default LoginSignup
+export default LogInSignUp
